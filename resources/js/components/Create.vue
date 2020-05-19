@@ -96,7 +96,7 @@ export default {
             this.fields = []
             let resourceUri = _.kebabCase(this.field.resourceName)
             const { data: fields } = await Nova.request().get(
-                `/nova-api/${resourceUri}/creation-fields`
+                `/nova-api/${resourceUri}/creation-fields?editing=true&editMode=create`
             )
 
             this.fields = fields
